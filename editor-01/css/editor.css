@@ -1,0 +1,303 @@
+html, body{
+	word-wrap: break-word;
+}
+body{
+	background-color: #f2f2f2;
+	padding: 100px;
+}
+::selection{ 
+	background-color:#ff0066;
+	color:#fff;
+} 
+::-webkit-selection{ 
+	background-color:#ff0066;
+	color:#fff;
+} 
+::-moz-selection{ 
+	background-color:#ff0066;
+	color:#fff;
+}
+.editor{
+	outline: none;
+	width: 100%;
+	height: 400px;
+	border: 1px solid #ddd;
+	font-size: 14px;
+	background-color: #fff;
+	font-family: "STXihei", "Microsoft Yahei";
+}
+.editor .toolbar{
+	background-color: #fff;
+	border-bottom: 1px solid #ddd;
+	padding: 5px;
+}
+.editor .toolbar a{
+	display: block;
+	float: left;
+	font-size: 16px;
+	cursor: pointer;
+	height: 30px;
+	line-height: 30px;
+	width: 34px;
+	text-align: center;
+	color: #666;
+	margin-right: 2px;
+}
+.editor .toolbar:after{
+	content: ' ';
+	display: table;
+	clear: both;
+}
+.editor .toolbar a:hover{
+	background-color: #f8f8f8;
+	box-shadow: 0px 0px 3px #ccc inset;
+	border-radius: 2px;
+	color: #000;
+}
+.editor .toolbar a.on{
+	background-color: #f8f8f8;
+	box-shadow: 0px 0px 3px #aaa inset;
+	border-radius: 2px;
+}
+
+.editor .toolbar i{
+	font-family: "FontAwesome";
+	font-weight: normal;
+	font-style: normal;
+}
+.editor .toolbar a#formatblock{
+	width: 55px;
+	padding-right: 18px;
+	position: relative;
+}
+.editor .toolbar a#formatblock i em{
+	font-style: normal;
+}
+.editor .toolbar a#formatblock i span{
+	position: absolute;
+	font-size: 12px;
+	color: #999;
+	top: 0px;
+	right: 10px;
+}
+.editor .toolbar #formatlist{
+	position: absolute;
+	top: 36px;
+	left: 5px;
+	width: 96px;
+	margin: 0px;
+	padding: 5px 0px;
+	border: 1px solid #eee;
+	background-color: #fff;
+	border-radius: 3px;
+}
+.editor .toolbar #formatlist li{
+	list-style-type: none;
+	cursor: pointer;
+	height: 30px;
+	line-height: 30px;
+	padding-left: 8px;
+	font-size: 16px;
+	color: #888;
+}
+.editor .toolbar #formatlist li:hover{
+	background-color: #f5f5f5;
+	color: #000;
+}
+.editor #colorPanel {
+	width: 115px;
+	background-color: #fff;
+	border: 1px solid #eee;
+	position: absolute;
+	margin: 0px;
+	padding: 4px;
+	border-radius: 3px;
+	box-shadow: 0px 0px 3px #eee;
+}
+.editor #colorPanel:after {
+	content: " ";
+	display: table;
+	clear: both;
+}
+.editor #colorPanel li{
+	float: left;
+	width: 15px;
+	height: 15px;
+	margin: 2px;
+	padding: 1px;
+	list-style-type: none;
+	border: 1px solid #ddd;
+}
+.editor #colorPanel li span{
+	display: block;
+	width: 15px;
+	height: 15px;
+}
+.editor #colorPanel li:hover{
+	border: 1px solid #000;
+}
+
+.editor .design{
+	padding: 10px;
+	height: 200px;
+	outline: none;
+	overflow-y: auto;
+}
+.editor .design h1{
+	font-size: 26px;
+}
+.editor .design h2{
+	font-size: 22px;
+}
+.editor .design h3{
+	font-size: 18px;
+}
+.editor .design h4{
+	font-size: 14px;
+}
+.editor .design h1, .edito .design h2, .edito .design h3, .edito .design h4{
+	line-height: 1.4em;
+}
+.editor .design p{
+	font-size: 14px;
+	line-height: 1em;
+}
+.editor .design ul li, .editor .design ol li{
+	line-height: 1.5em;
+}
+.editor .design table{
+	border-top: 1px solid #ccc;
+	border-left: 1px solid #ccc;
+}
+.editor .design table tr td{
+	border-right: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+}
+
+.editor .design pre{
+	background-color: #f5f5f5;
+	padding: 5px;
+	border-radius: 3px;
+}
+
+.editor #link {
+	position: fixed;
+	left: 50%;
+	top: 160px;
+	margin-left: -200px;
+	width: 400px;
+	background-color: #fff;
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 20px;
+	box-shadow: 0px 0px 3px #eee;
+}
+.editor #link fieldset{
+	border: none;
+	margin: 0px;
+	padding: 0px 0px 10px;
+}
+.editor #link label{
+	font-size: 14px;
+	color: #444;
+}
+.editor #link #url, .editor #link .title{
+	font-size: 12px;
+	width: 300px;
+	padding: 5px;
+	outline: none;
+	border: 1px solid #333;
+	color: #333;
+	border-radius: 2px;
+}
+.editor #link .setdiv{
+	padding-top: 10px;
+}
+.editor #link .setdiv a{
+	margin-right: 10px;
+	padding: 4px 20px;
+	border: 1px solid #333;
+	border-radius: 5px;
+	font-size: 12px;
+	cursor: pointer;
+}
+.editor #tableContainer {
+	position: fixed;
+	left: 50%;
+	top: 160px;
+	margin-left: -170px;
+	width: 340px;
+	background-color: #fff;
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 20px;
+	font-size: 14px;
+	box-shadow: 0px 0px 3px #eee;
+}
+.editor #tableContainer fieldset{
+	margin: 0px;
+	padding: 0px 0px 10px 0px;
+	border: none;
+	margin-right: -30px;
+}
+
+.editor #tableContainer fieldset input{
+	width: 100px;
+	padding: 3px 3px 3px 5px;
+	margin-right: 30px;
+	outline: none;
+	border: 1px solid #777;
+	border-radius: 2px;
+}
+.editor #tableContainer .setdiv{
+	padding-top: 10px;
+}
+.editor #tableContainer a{
+	margin-right: 10px;
+	padding: 4px 20px;
+	border: 1px solid #777;
+	border-radius: 5px;
+	font-size: 12px;
+	cursor: pointer;
+}
+
+.editor #codeContainer {
+	position: fixed;
+	left: 50%;
+	top: 160px;
+	margin-left: -300px;
+	width: 600px;
+	background-color: #fff;
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 20px;
+	font-size: 14px;
+	box-shadow: 0px 0px 3px #eee;
+}
+.editor #codeContainer label{
+	font-size: 12px;
+}
+.editor #codeContainer fieldset{
+	padding: 0px 0px 10px 0px;
+	margin: 0px;
+	border: none;
+}
+.editor #codeContainer fieldset textarea{
+	border: 1px solid #777;
+	width: 590px;
+	border-radius: 3px;
+	outline: none;
+	padding: 5px;
+	font-size: 12px;
+}
+.editor #codeContainer .setdiv{
+	padding-top: 10px;
+}
+.editor #codeContainer a{
+	margin-right: 10px;
+	padding: 4px 20px;
+	border: 1px solid #777;
+	border-radius: 5px;
+	font-size: 12px;
+	cursor: pointer;
+}
