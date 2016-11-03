@@ -3,7 +3,6 @@ html, body{
 }
 body{
 	background-color: #f2f2f2;
-	padding: 100px;
 }
 ::selection{ 
 	background-color:#ff0066;
@@ -300,4 +299,16 @@ body{
 	border-radius: 5px;
 	font-size: 12px;
 	cursor: pointer;
+}
+#insertimage {
+	position: relative;
+}
+#insertimage input{
+	width: 100%;
+	height: 100%;
+	z-index: 10000;
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0;
 }

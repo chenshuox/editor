@@ -57,7 +57,7 @@ function editor(editor) {
 			createlink: '&#xf0c1;',
 			unlink: '&#xf127;',
 			inserttable: '&#xf0ce;',
-			insertimage: '&#xf03e;',
+			insertimage: '&#xf03e;<input type="file" name="file" id="file">',
 			insertvideo: '&#xf03d;',
 			insertcode: '&#xf121;',
 			upload: '&#xf093;',
@@ -152,6 +152,7 @@ function editor(editor) {
 	//-------------------------工具栏点击事件绑定并执行相应操作------------------------------//
 
 	function tooLbarEvent(but) {
+		
 		for(var i=0; i<but.length; i++) {
 			but[i].addEventListener('click', function() {
 
@@ -198,7 +199,34 @@ function editor(editor) {
 						break;
 
 					case 'insertimage' :
-						alert('此功能开发中......!');
+						restoreSelection();
+						var imgPath;
+						var ele = document.getElementById('file');
+						ele.addEventListener('change', function() {
+							var fileInput = document.getElementById('file').files[0];
+							var data = new FormData();
+							data.append('file', fileInput);
+							console.log(data);
+							var oReq = new XMLHttpRequest();  
+							oReq.open( "POST", "upload.php" , true );
+							oReq.onload = function(oEvent) {  
+							    
+							};
+							oReq.onreadystatechange = function() {
+								if (oReq.readyState == 4) {
+									if (oReq.status >=200 && oReq.status <300 || oReq.status == 304) {
+	
+										document.execCommand('insertimage', false, 'http://127.0.0.1/editor-01/chenshuo.jpg');
+									} else {
+										alert('error');
+									}
+								}
+							}
+
+							oReq.send(data);
+							
+						});
+						saveSelection();
 						break;
 
 					case 'insertvideo' :
@@ -697,6 +725,19 @@ function editor(editor) {
 			return builder.join("");
 		}
 
+	}
+
+	function uploadImage() {
+		var ele = document.getElementById('file').files[0];
+		var data = new FormData();
+		data.append('file', ele);
+		console.log(data);
+		var oReq = new XMLHttpRequest();  
+		oReq.open( "POST", "upload.php" , true );
+		oReq.onload = function(oEvent) {  
+		    
+		};  
+		oReq.send(data);
 	}
 
 
